@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+body {
+  background: #333333;
+}
+
+/* 공통 */
+//접근성을 고려한 화면 감춤
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+}
+
+/* Layout */
+/* header */
+.header {
+  margin: 4rem 0;
+
+  h1 {
+    font-family: var(--main-font);
+    font-size: 4rem;
+    text-align: center;
+    color: #EEBC72;
+    margin-bottom: 2rem;
+
+    .t-c1 {
+      color: #EE807D;
+    }
+
+    .t-c2 {
+      color: #C0DB6C;
+    }
+
+    .t-c3 {
+      color: #9989F8;
+    }
+
+    .t-c4 {
+      color: #4AA5F8;
+    }
+
+    .t-c5 {
+      color: #EA3DEE;
+    }
+
+    .t-c6 {
+      color: #E39844;
+    }
+
+    .t-c6 {
+      color: #BFBFBF;
+    }
+  }
+}
+
+/* content */
+.content {
+  margin: 0 auto;
+  width: 120rem;
+  max-width: calc(100% - 6rem);
+}
+
+/* footer */
+.footer {
+  margin-top: 10rem;
+  padding: 4rem;
+  background: #1E1E1E;
+  text-align: center;
+  color: #fff;
+  font-family: var(--main-font);
+
+  h2 {
+    font-size: 1.6rem;
+
+    strong {
+      font-size: 2rem;
+      font-family: var(--bold-font);
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+
+    li:not(:first-child) {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        margin-right: 2rem;
+      }
+    }
+  }
+}
