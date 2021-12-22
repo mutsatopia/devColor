@@ -4,6 +4,11 @@ body {
 }
 
 /* 공통 */
+button {
+  font-size: 1.6rem;
+  font-family: inherit;
+}
+
 .a11y-hidden {
   overflow: hidden;
   position: absolute;
@@ -98,4 +103,266 @@ body {
   height: 8px;
   background: rgba(255, 255, 255, 0.2);
   margin-right: 2rem;
+}
+
+/* 컨트롤 */
+.control {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  padding: 0.8em 0;
+  margin-bottom: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.3), 0 -1px rgba(0, 0, 0, 0.3);
+}
+
+.control a,
+.control button {
+  border: 0;
+  box-sizing: border-box;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  border-radius: 0.4rem;
+}
+
+.control .back {
+  display: block;
+  height: 100%;
+  padding-left: 3.2rem;
+  color: #fff;
+  font-size: 1.6rem;
+  background: url(../img/back.svg) no-repeat 0 50%/2.4rem 2.4rem;
+}
+
+.control .control-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+/* 셀렉트 */
+.cont-select {
+  position: relative;
+  width: 12rem;
+}
+
+.cont-select .btn-select {
+  width: 100%;
+  border-radius: 0.3rem;
+  color: #fff;
+  text-align: left;
+  padding: 0 2em 0 1em;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: #111;
+  position: relative;
+}
+
+.cont-select .btn-select::after {
+  content: '';
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -1.2rem;
+  right: 0.8rem;
+  background: url(../img/down.svg) no-repeat 50% 50%/cover;
+  transition: transform 0.3s;
+}
+
+.cont-select .btn-select.on::after {
+  transform: rotate(-180deg);
+}
+
+.cont-select .btn-select:active + .list-member {
+  display: block;
+}
+
+.cont-select .list-member {
+  position: absolute;
+  top: 3.4rem;
+  left: 0;
+  z-index: 1;
+  display: none;
+  width: 100%;
+  border-radius: 0.4rem;
+  background: #1e1e1e;
+  color: #fff;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.cont-select .list-member.on {
+  display: block;
+}
+
+.cont-select .list-member li {
+  height: 4rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.cont-select .list-member li button {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  border-radius: 0.8rem;
+  background: transparent;
+  color: #fff;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cont-select .list-member li button:hover, .cont-select .list-member li button:focus {
+  color: #4AA5F8;
+}
+
+/* button */
+[class^='button-'] {
+  background: #4AA5F8;
+  color: #fff;
+  display: inline-flex;
+  padding: 0 1rem;
+  border-radius: 0.4rem;
+  align-items: center;
+}
+
+[class^='button-'].button-st1 {
+  background: #004D94;
+}
+
+/* color box */
+.color-cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.color-list a {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  background: #1E1E1E;
+  gap: 0.5em;
+}
+
+.color-list .color-title {
+  color: #fff;
+}
+
+.color-list .wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-list .wrap .script-txt {
+  color: #fff;
+  padding: 2em 1em;
+}
+
+.color-list .wrap div.script-txt {
+  height: 40rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-list .wrap div.script-txt p {
+  font-size: 2em;
+  font-family: var(--main-font);
+}
+
+.color-list .wrap .palette {
+  display: flex;
+  height: 4rem;
+  align-items: stretch;
+}
+
+.color-list .wrap .palette li {
+  width: 100%;
+  height: 100%;
+}
+
+.color-list .wrap .palette .color-box {
+  width: 100%;
+  height: 100%;
+}
+
+.color-list .wrap ul.palette {
+  height: 12rem;
+}
+
+.color-list .wrap ul.palette button span {
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.color-list .wrap ul.palette button:hover span {
+  opacity: 1;
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.4rem;
+}
+
+/* 임시 */
+.script-txt {
+  background: #1E1E1E;
+}
+
+.c1 {
+  color: #569CD6;
+}
+
+.c1.color-box {
+  background: #569CD6;
+}
+
+.c2 {
+  color: #9CDCFE;
+}
+
+.c2.color-box {
+  background: #9CDCFE;
+}
+
+.c3 {
+  color: #D4D4D4;
+}
+
+.c3.color-box {
+  background: #D4D4D4;
+}
+
+.c4 {
+  color: #DCDCAA;
+}
+
+.c4.color-box {
+  background: #DCDCAA;
+}
+
+.c5 {
+  color: #DA70D6;
+}
+
+.c5.color-box {
+  background: #DA70D6;
+}
+
+.c6 {
+  color: #CE9178;
+}
+
+.c6.color-box {
+  background: #CE9178;
 }
