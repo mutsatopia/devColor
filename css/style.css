@@ -182,10 +182,6 @@ main .gradient {
     background-repeat: no-repeat;
 }
 
-/* 
-    gradient-rotate의 동생되는 위치에 둬야 할 것 같음. -> 스크린 리더기가 읽는 순서 감안
-*/
-
 .range-control input{
     position: relative;
 }
