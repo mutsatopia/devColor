@@ -50,7 +50,6 @@ main .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
 }
 
 .control .control-info {
@@ -62,12 +61,12 @@ main .main-header {
     height: 44px;
     border-radius: 4px;
     background-color: #000;
-    color: inherit;
+    color: #fff;
     font-size: 20px; 
     font-weight: bold;
-    padding: 0 116px 0 14px;
-    font-family: inherit;
+    padding: 11px 116px 11px 14px;
     position: relative;
+    font-family: inherit;
 }
 
 .control .control-btn::after {
@@ -80,25 +79,8 @@ main .main-header {
     top: 19.25px;
 }
 
-.control-btn.on::after {
-  transform: rotate(180deg);
-}
-
-.control-btn.on+.control-ul {
-  display: block;
-}
-
 .control .control-ul {
     display: none;
-    position: absolute;
-    left: 126px;
-    font-size: 20px;
-    width: 160px;
-    bottom: -74px;
-    background-color: black;
-    padding: 14px;
-    border-radius: 4px;
-    z-index: 1;
 }
 
 .control .control-mode {
@@ -139,13 +121,16 @@ main .gradient {
     display: flex;
 }
 
-.gradient-control .first-mini-color,
-.gradient-control .second-mini-color {
+.gradient-control input {
     width: 64px;
     height: 44px;
     border-radius: 4px;
     border: none;
     padding: 8px;
+    background-color: #fff;
+}
+
+.gradient-control button {
     background-color: #fff;
 }
 
@@ -167,80 +152,13 @@ main .gradient {
     width: 44px;
     height: 44px;
     border-radius: 4px 0 0 4px;
-    position: relative;
-    border: 7px solid white;
-    background: linear-gradient(90deg, #569CD6 0%, #9CDCFE 100%);
-    box-sizing: border-box;
-}
-
-.gradient-control .range-control {
-    position: absolute;
-    top: 68px;
-    left: -71px;
-    width: 170px;
-    display: none;
-}
-
-.range-control input {
-    width: 90px;
-}
-
-.range-control label {
-  vertical-align: 3px;
-}
-
-.range-control label .value{
-
-}
-
-.gradient-rotate .range-bg {
-    background-color: #fff;
-    opacity: .3;
-    width: 178px;
-    height: 44px;
-    border-radius: 4px;
-    position: absolute;
-    top: 56px;
-    left: -74px;
-    display: none;
-}
-
-.gradient-rotate.on .range-bg, 
-.gradient-rotate.on .range-control {
-    display: block;
-}
-
-.range-bg::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 16px 10px;
-    border-color: transparent transparent #fff transparent;
-    position: absolute;
-    top: -11px;
-    left: 79px;
-}
-
-.gradient-control button {
-    background-color: #fff;
 }
 
 .gradient-control .gradient-spread {
     width: 44px;
     height: 44px;
     border-radius: 0 4px 4px 0;
-    background-color: rgba(255,255,255,0.3);
-    position: relative;
-}
-
-.gradient-control .gradient-spread::after {
-    content: '';
-    position: absolute;
-    background-image: url(../img/random.png);
-    background-size: 18px 19px;
-    background-position: center;
-    background-repeat: no-repeat;
+    opacity: 0.3;
 }
 
 .gradient-control .gradient-random {
@@ -264,12 +182,49 @@ main .gradient {
     background-repeat: no-repeat;
 }
 
+/* 
+    gradient-rotate의 동생되는 위치에 둬야 할 것 같음. -> 스크린 리더기가 읽는 순서 감안
+*/
+
+.range-control input{
+    position: relative;
+}
+
+.range-control input::after {
+    content: '';
+    position: absolute;
+    width: 178px;
+    height: 44px;
+    border-radius: 4px;
+    /* background-color: rgba(255,255,255,0.3); */
+    background-color: #fff;
+    opacity: .3;
+}
+
+.range-control input::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 16px 10px;
+    /* border-color: transparent transparent rgba(255,255,255,0.3) transparent; */
+    border-color: transparent transparent #fff transparent;
+    opacity: .3;
+    position: absolute;
+    top: -11px;
+    left: 79px;
+}
+
+.value {
+    font-weight: bold;
+}
+
 main .color-array {
     height: 200px;
     display: flex;
 }
 
-.color-array > button {
+.color-array > div {
     width: calc(100% / 6);
 }
 
@@ -297,7 +252,7 @@ main .color-array {
     background-color: #CE9178;
 }
 
-/* page2 */
+=======
 body {
   background: #333333;
 }
@@ -306,7 +261,7 @@ body {
 button {
   font-size: 1.6rem;
   font-family: inherit;
-} 
+}
 
 .a11y-hidden {
   overflow: hidden;
@@ -518,7 +473,7 @@ button {
 
 .cont-select .list-member li button:hover, .cont-select .list-member li button:focus {
   color: #4AA5F8;
-} 
+}
 
 /* button */
 [class^='button-'] {
@@ -611,7 +566,7 @@ button {
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.4rem;
-} 
+}
 
 /* 임시 */
 .script-txt {
