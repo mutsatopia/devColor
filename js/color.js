@@ -78,6 +78,6 @@ const palette = {
     c3: { hex: '#422B4C', rgba: 'rgba(66, 43, 76, 1)', rgb: 'rgb(66, 43, 76)' },
     c4: { hex: '#A1A1A1', rgba: 'rgba(161, 161, 161, 1)', rgb: 'rgb(161, 161, 161)' },
     c5: { hex: '#377EF7', rgba: 'rgba(55, 126, 247, 1)', rgb: 'rgb(55, 126, 247)' },
-    c6: { hex: '#377EF7', rgba: 'rgba(234, 64, 37, 1)', rgb: 'rgb(234, 64, 37)' },
+    c6: { hex: '#EA4025', rgba: 'rgba(234, 64, 37, 1)', rgb: 'rgb(234, 64, 37)' },
   }
 }
