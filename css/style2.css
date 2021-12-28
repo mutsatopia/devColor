@@ -183,11 +183,11 @@ button {
 }
 
 .cont-select .list-member {
+  display: none;
   position: absolute;
   top: 3.4rem;
   left: 0;
   z-index: 1;
-  display: none;
   width: 100%;
   border-radius: 0.4rem;
   background: #1e1e1e;
@@ -314,55 +314,12 @@ button {
   border-radius: 0.4rem;
 }
 
-/* 임시 */
-.script-txt {
-  background: #1E1E1E;
+.cont-list,
+.cont-palette {
+  display: none;
 }
 
-.c1 {
-  color: #569CD6;
-}
-
-.c1.color-box {
-  background: #569CD6;
-}
-
-.c2 {
-  color: #9CDCFE;
-}
-
-.c2.color-box {
-  background: #9CDCFE;
-}
-
-.c3 {
-  color: #D4D4D4;
-}
-
-.c3.color-box {
-  background: #D4D4D4;
-}
-
-.c4 {
-  color: #DCDCAA;
-}
-
-.c4.color-box {
-  background: #DCDCAA;
-}
-
-.c5 {
-  color: #DA70D6;
-}
-
-.c5.color-box {
-  background: #DA70D6;
-}
-
-.c6 {
-  color: #CE9178;
-}
-
-.c6.color-box {
-  background: #CE9178;
+.cont-list.active,
+.cont-palette.active {
+  display: block;
 }
