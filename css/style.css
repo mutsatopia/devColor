@@ -2,257 +2,256 @@
 
 /* utility */
 .sr_only {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
 
 body {
-    color: #fff;
+  color: #fff;
 }
 
 .container {
-    width: 1440px;
-    margin: 0 auto;
+  width: 1440px;
+  margin: 0 auto;
 }
 
-main {    
-    background-color: #333333;
-    padding-bottom: 132px;
+main {
+  background-color: #333333;
+  padding-bottom: 132px;
 }
 
 main .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main-header__back a {
-    font-size: 18px;
-    position: relative;
-    padding-left: 36.75px;
+  font-size: 18px;
+  position: relative;
+  padding-left: 36.75px;
 }
 
 .main-header__back a::before {
-    content: '';
-    background-image: url(../img/arrow.png);
-    width: 17.5px;
-    height: 13.5px;
-    position: absolute;
-    left: 3.25px;
-    top: 5.25px;
+  content: "";
+  background-image: url(../img/arrow.png);
+  width: 17.5px;
+  height: 13.5px;
+  position: absolute;
+  left: 3.25px;
+  top: 5.25px;
 }
 
 .main-header .control {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .control .control-info {
-    margin-right: 22px;
+  margin-right: 22px;
 }
 
 .control .control-btn {
-    width: 160px;
-    height: 44px;
-    border-radius: 4px;
-    background-color: #000;
-    color: #fff;
-    font-size: 20px; 
-    font-weight: bold;
-    padding: 11px 116px 11px 14px;
-    position: relative;
-    font-family: inherit;
+  width: 160px;
+  height: 44px;
+  border-radius: 4px;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 11px 116px 11px 14px;
+  position: relative;
+  font-family: inherit;
 }
 
 .control .control-btn::after {
-    content: '';
-    background-image: url(../img/angle_down.png);
-    position: absolute;
-    right: 14.25px;
-    width: 11.5px;
-    height: 6.5px;
-    top: 19.25px;
+  content: "";
+  background-image: url(../img/angle_down.png);
+  position: absolute;
+  right: 14.25px;
+  width: 11.5px;
+  height: 6.5px;
+  top: 19.25px;
 }
 
 .control .control-ul {
-    display: none;
+  display: none;
 }
 
 .control .control-mode {
-    width: 160px;
-    height: 44px;
-    border-radius: 4px;
-    background-color: #004D94;
-    color: #fff;
-    font-size: 20px; 
-    font-weight: bold;
-    text-align: center;
-    line-height: 44px;
-    margin-left: 17px;
-    position: relative;
+  width: 160px;
+  height: 44px;
+  border-radius: 4px;
+  background-color: #004d94;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 44px;
+  margin-left: 17px;
+  position: relative;
 }
 
 .control .control-mode::before {
-    content: '';
-    width: 1px;
-    height: 20px;
-    background-color: #C4C4C4;
-    position: absolute;
-    left: -8px;
-    top: 12px;
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #c4c4c4;
+  position: absolute;
+  left: -8px;
+  top: 12px;
 }
 
 main .gradient {
-    margin: 28px 0 40px 0;
-    height: 600px;
-    background: linear-gradient(90deg, #569CD6 0%, #9CDCFE 100%);
-    position: relative;
+  margin: 28px 0 40px 0;
+  height: 600px;
+  background: linear-gradient(90deg, #569cd6 0%, #9cdcfe 100%);
+  position: relative;
 }
 
 .gradient .gradient-control {
-    position: absolute;
-    right: 16px;
-    top: 16px;
-    display: flex;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
 }
 
 .gradient-control input {
-    width: 64px;
-    height: 44px;
-    border-radius: 4px;
-    border: none;
-    padding: 8px;
-    background-color: #fff;
+  width: 64px;
+  height: 44px;
+  border-radius: 4px;
+  border: none;
+  padding: 8px;
+  background-color: #fff;
 }
 
 .gradient-control button {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .gradient-control input[type="color" i]::-webkit-color-swatch-wrapper {
-    align-items: center;
+  align-items: center;
 }
 
 .gradient-control input[type="color" i]::-webkit-color-swatch {
-    width: 44px;
-    height: 28px;
-    border: none;
+  width: 44px;
+  height: 28px;
+  border: none;
 }
 
 .gradient-control .second-mini-color {
-    margin: 0 13px 0 4px;
+  margin: 0 13px 0 4px;
 }
 
 .gradient-control .gradient-rotate {
-    width: 44px;
-    height: 44px;
-    border-radius: 4px 0 0 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px 0 0 4px;
 }
 
 .gradient-control .gradient-spread {
-    width: 44px;
-    height: 44px;
-    border-radius: 0 4px 4px 0;
-    opacity: 0.3;
+  width: 44px;
+  height: 44px;
+  border-radius: 0 4px 4px 0;
+  opacity: 0.3;
 }
 
 .gradient-control .gradient-random {
-    width: 44px;
-    height: 44px;
-    border-radius: 4px;
-    margin: 0 8px;
-    background-image: url(../img/random.png);
-    background-size: 18px 19px;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  margin: 0 8px;
+  background-image: url(../img/random.png);
+  background-size: 18px 19px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .gradient-control .gradient-copy {
-    width: 72px;
-    height: 44px;
-    border-radius: 4px;
-    background-image: url(../img/all_copy.png);
-    background-size: 32px 18px;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 72px;
+  height: 44px;
+  border-radius: 4px;
+  background-image: url(../img/all_copy.png);
+  background-size: 32px 18px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* 
     gradient-rotate의 동생되는 위치에 둬야 할 것 같음. -> 스크린 리더기가 읽는 순서 감안
 */
 
-.range-control input{
-    position: relative;
+.range-control input {
+  position: relative;
 }
 
 .range-control input::after {
-    content: '';
-    position: absolute;
-    width: 178px;
-    height: 44px;
-    border-radius: 4px;
-    /* background-color: rgba(255,255,255,0.3); */
-    background-color: #fff;
-    opacity: .3;
+  content: "";
+  position: absolute;
+  width: 178px;
+  height: 44px;
+  border-radius: 4px;
+  /* background-color: rgba(255,255,255,0.3); */
+  background-color: #fff;
+  opacity: 0.3;
 }
 
 .range-control input::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 16px 10px;
-    /* border-color: transparent transparent rgba(255,255,255,0.3) transparent; */
-    border-color: transparent transparent #fff transparent;
-    opacity: .3;
-    position: absolute;
-    top: -11px;
-    left: 79px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 16px 10px;
+  /* border-color: transparent transparent rgba(255,255,255,0.3) transparent; */
+  border-color: transparent transparent #fff transparent;
+  opacity: 0.3;
+  position: absolute;
+  top: -11px;
+  left: 79px;
 }
 
 .value {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 main .color-array {
-    height: 200px;
-    display: flex;
+  height: 200px;
+  display: flex;
 }
 
 .color-array > div {
-    width: calc(100% / 6);
+  width: calc(100% / 6);
 }
 
 .color-box-1 {
-    background-color: #569CD6;
+  background-color: #569cd6;
 }
 
 .color-box-2 {
-    background-color: #9CDCFE;
+  background-color: #9cdcfe;
 }
 
 .color-box-3 {
-    background-color: #D4D4D4;
+  background-color: #d4d4d4;
 }
 
 .color-box-4 {
-    background-color: #DCDCAA;
+  background-color: #dcdcaa;
 }
 
 .color-box-5 {
-    background-color: #DA70D6;
+  background-color: #da70d6;
 }
 
 .color-box-6 {
-    background-color: #CE9178;
+  background-color: #ce9178;
 }
 
-=======
 body {
   background: #333333;
 }
@@ -284,36 +283,36 @@ button {
   font-family: var(--main-font);
   font-size: 4rem;
   text-align: center;
-  color: #EEBC72;
+  color: #eebc72;
   margin-bottom: 2rem;
 }
 
 .header h1 .t-c1 {
-  color: #EE807D;
+  color: #ee807d;
 }
 
 .header h1 .t-c2 {
-  color: #C0DB6C;
+  color: #c0db6c;
 }
 
 .header h1 .t-c3 {
-  color: #9989F8;
+  color: #9989f8;
 }
 
 .header h1 .t-c4 {
-  color: #4AA5F8;
+  color: #4aa5f8;
 }
 
 .header h1 .t-c5 {
-  color: #EA3DEE;
+  color: #ea3dee;
 }
 
 .header h1 .t-c6 {
-  color: #E39844;
+  color: #e39844;
 }
 
 .header h1 .t-c6 {
-  color: #BFBFBF;
+  color: #bfbfbf;
 }
 
 /* content */
@@ -327,7 +326,7 @@ button {
 .footer {
   margin-top: 10rem;
   padding: 4rem;
-  background: #1E1E1E;
+  background: #1e1e1e;
   text-align: center;
   color: #fff;
   font-family: var(--main-font);
@@ -351,7 +350,7 @@ button {
 }
 
 .footer ul li:not(:first-child)::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1px;
   height: 8px;
@@ -416,7 +415,7 @@ button {
 }
 
 .cont-select .btn-select::after {
-  content: '';
+  content: "";
   display: block;
   width: 2.4rem;
   height: 2.4rem;
@@ -424,7 +423,7 @@ button {
   top: 50%;
   margin-top: -1.2rem;
   right: 0.8rem;
-  background: url(../img/down.svg) no-repeat 50% 50%/cover;
+  background: url(../img/down.svg) no-repeat 50% 50% / cover;
   transition: transform 0.3s;
 }
 
@@ -471,13 +470,14 @@ button {
   text-overflow: ellipsis;
 }
 
-.cont-select .list-member li button:hover, .cont-select .list-member li button:focus {
-  color: #4AA5F8;
+.cont-select .list-member li button:hover,
+.cont-select .list-member li button:focus {
+  color: #4aa5f8;
 }
 
 /* button */
-[class^='button-'] {
-  background: #4AA5F8;
+[class^="button-"] {
+  background: #4aa5f8;
   color: #fff;
   display: inline-flex;
   padding: 0 1rem;
@@ -485,8 +485,8 @@ button {
   align-items: center;
 }
 
-[class^='button-'].button-st1 {
-  background: #004D94;
+[class^="button-"].button-st1 {
+  background: #004d94;
 }
 
 /* color box */
@@ -502,7 +502,7 @@ button {
   padding: 1.2rem;
   font-size: 1.6rem;
   border-radius: 1rem;
-  background: #1E1E1E;
+  background: #1e1e1e;
   gap: 0.5em;
 }
 
@@ -570,53 +570,53 @@ button {
 
 /* 임시 */
 .script-txt {
-  background: #1E1E1E;
+  background: #1e1e1e;
 }
 
 .c1 {
-  color: #569CD6;
+  color: #569cd6;
 }
 
 .c1.color-box {
-  background: #569CD6;
+  background: #569cd6;
 }
 
 .c2 {
-  color: #9CDCFE;
+  color: #9cdcfe;
 }
 
 .c2.color-box {
-  background: #9CDCFE;
+  background: #9cdcfe;
 }
 
 .c3 {
-  color: #D4D4D4;
+  color: #d4d4d4;
 }
 
 .c3.color-box {
-  background: #D4D4D4;
+  background: #d4d4d4;
 }
 
 .c4 {
-  color: #DCDCAA;
+  color: #dcdcaa;
 }
 
 .c4.color-box {
-  background: #DCDCAA;
+  background: #dcdcaa;
 }
 
 .c5 {
-  color: #DA70D6;
+  color: #da70d6;
 }
 
 .c5.color-box {
-  background: #DA70D6;
+  background: #da70d6;
 }
 
 .c6 {
-  color: #CE9178;
+  color: #ce9178;
 }
 
 .c6.color-box {
-  background: #CE9178;
+  background: #ce9178;
 }
