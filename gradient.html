@@ -10,10 +10,16 @@
 </head>
 
 <body>
-  <header>  
-    <!-- merge시 합체 ~ -->
-    <h1>let Color = {};</h1>
+  <!-- 헤더 -->
+  <header class="header">
+    <h1>
+      <span class="t-c6">let</span> dev<span class="t-c1">C</span><span class="t-c2">o</span><span
+        class="t-c3">l</span><span class="t-c4">o</span><span class="t-c5">r</span> <span class="t-c6">= {};</span>
+    </h1>
   </header>
+  <!-- //헤더 -->
+
+  <!-- 메인 -->
   <main>
     <section class="container">
       <!-- 헤더 & 컨트롤 박스 -->
@@ -29,6 +35,7 @@
           <!-- JS로 클래스 토글로 컨트롤-->
           <button type="button" class="control-btn">HEX</button>
           <ul class="control-ul">
+            <li>HEX</li>
             <li>RGBA</li>
           </ul>
           <a href="#none" class="control-mode">Palette Mode</a>
@@ -42,46 +49,41 @@
           <input type="color" value="#569CD6" class="first-mini-color"/>
           <!-- 선택된 두 번째 색상-->
           <input type="color" value="#9CDCFE" class="second-mini-color"/>
-          <!-- 그라데이션 미니 이미지-->
+          <!-- 그라데이션 각도 조절-->
           <button class="gradient-rotate">
-            <div class="rotate-img"></div>
-            <div class="range-control">
-              <input type="range" name="degree" id="degree">
+            <span class="range-bg"></span>
+            <span class="range-control">
+              <input type="range" name="degree" id="degree" min="0" max="360" step="1" value="0" class="range-bar">
               <!-- JS로 해당 숫자 뿌려주기 -->
-              <label for="degree">
-                <span class="value">90</span>
-                <span>deg</span>
-              </label>
-            </div>
+              <!-- fz: 0 -->
+              <label for="degree"> 
+                <span id="value1">90deg</span>
+              </label>              
+            </span>
           </button>
           <!-- 그라데이션 방향 조절 -->
-          <button class="gradient-spread">
-            <div class="spread-img"></div>
-          </button>
+          <button class="gradient-spread"></button>
           <!-- 랜덤 추천 버튼-->
           <button class="gradient-random"></button>
           <!-- 그라디언트 코드 복사 -->
           <button class="gradient-copy"></button>
         </div>
-        <!-- deg 조절용 range -->
       </article>
       <!-- 색상 선택 섹터-->
       <article class="color-array">
         <!-- 클릭 시 가상요소를 토글로 껐다 켰다하기 -->
         <!-- 2개가 넘는 컬러를 막기 위해 JS단에서 제어-->
-        <div class="color-box-1"></div>
-        <div class="color-box-2"></div>
-        <div class="color-box-3"></div>
-        <div class="color-box-4"></div>
-        <div class="color-box-5"></div>
-        <div class="color-box-6"></div>
+        <button class="color-box-1"></button>
+        <button class="color-box-2"></button>
+        <button class="color-box-3"></button>
+        <button class="color-box-4"></button>
+        <button class="color-box-5"></button>
+        <button class="color-box-6"></button>
       </article>
     </section>
   </main>
-  <!-- merge시 합체 ~ -->
-  <footer>코아지경</footer>
-</body>
-
+  <!-- //메인 -->
+  
   <!-- 푸터 -->
   <footer class="footer">
     <h2>Project. <strong>inCodeZone</strong></h2>
@@ -93,5 +95,8 @@
     </ul>
   </footer>
   <!-- //푸터 -->
+
+  <script src="./js/color.js"></script>
+  <script src="./js/gradient.js"></script>
   </body>
 </html>
