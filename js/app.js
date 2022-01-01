@@ -50,7 +50,6 @@ function app() {
             sect.appendChild(content);
 
 
-
             const colorBtn = document.querySelectorAll('.palette button');
             const allCopy = document.querySelector('.button-st1');
 
