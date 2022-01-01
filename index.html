@@ -13,42 +13,54 @@
   <!-- 헤더 -->
   <header class="header">
     <h1>
-      <span class="t-c6">let</span> dev<span class="t-c1">C</span><span class="t-c2">o</span><span
-        class="t-c3">l</span><span class="t-c4">o</span><span class="t-c5">r</span> <span class="t-c6">= {};</span>
+      <a href="./">
+        <span class="t-c6">let</span> dev<span class="t-c1">C</span><span class="t-c2">o</span><span
+          class="t-c3">l</span><span class="t-c4">o</span><span class="t-c5">r</span> <span class="t-c6">= {};</span>
+      </a>
     </h1>
   </header>
   <!-- //헤더 -->
 
   <!-- 컨텐츠 -->
-  <section class="content">
+  <section class="content cont-list active">
     <h2 class="a11y-hidden">색상조합 리스트</h2>
     <ul class="color-cont">
-      <li class="color-list">
-        <a href="palette.html">
-          <span class="color-title">color1</span>
-          <span class="wrap">
-            <span class="script-txt">
-              <span class="c3">&lt;</span><span class="c1">script</span><span class="c3">&gt;</span><br />
-              &nbsp;<span class="c2">console</span><span class="c3">.</span><span class="c4">log</span><span
-                class="c5">(</span><span class="c6">“Hello World”</span><span class="c5">)</span>;<br />
-              <span class="c">&lt;</span><span class="c1">/script</span><span class="c3">&gt;</span>
-            </span>
-            <span class="palette">
-              <span class="color-box c1"></span>
-              <span class="color-box c2"></span>
-              <span class="color-box c3"></span>
-              <span class="color-box c4"></span>
-              <span class="color-box c5"></span>
-              <span class="color-box c6"></span>
-            </span>
-          </span>
-        </a>
-      </li>
     </ul>
+  </section>
+  <!-- //컨텐츠 -->
 
+  <!-- 컨텐츠 -->
+  <section class="content cont-palette">
+    <h2 class="a11y-hidden">색상조합 팔레트</h2>
+    <!-- 컨트롤 -->
+    <div class="control">
+      <div>
+        <button href="#" class="back">back</button>
+      </div>
+      <div class="control-right">
+        <p>Copy Format : </p>
+        <div class="cont-select">
+          <button class="btn-select">HEX</button>
+          <ul class="list-member">
+
+          </ul>
+        </div>
+        <button class="button-st1">All Copy</button>
+        <button class="button-st2">Gradient Mode</button>
+      </div>
+    </div>
+    <!-- // 컨트롤 -->
+    <!-- 컬러박스 -->
+    <section class="color-list">
+
+    </section>
+    <!-- // 컬러박스 -->
 
   </section>
   <!-- //컨텐츠 -->
+
+
+
 
   <!-- 푸터 -->
   <footer class="footer">
@@ -56,11 +68,15 @@
     <ul>
       <li>Kang Hyejin</li>
       <li>Kim Changhyeon</li>
-      <li>Lee Jia</li>
+      <li>Lee Jiah</li>
       <li>Hong Jeseop</li>
     </ul>
   </footer>
   <!-- //푸터 -->
+  <script src="./js/color.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/formatSelect.js"></script>
 </body>
 
 </html>
