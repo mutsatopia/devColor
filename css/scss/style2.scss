@@ -4,7 +4,6 @@ body {
   background: #333333;
 }
 
-/* 공통 */
 button {
   font-size: 1.6rem;
   font-family: inherit;
@@ -14,12 +13,12 @@ button {
 .a11y-hidden {
   overflow: hidden;
   position: absolute;
-  clip: rect(0, 0, 0, 0);
   width: 1px;
   height: 1px;
+  padding: 0;
   margin: -1px;
   border: 0;
-  padding: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 /* Layout */
@@ -28,11 +27,11 @@ button {
   margin: 4rem 0;
 
   h1 {
+    margin-bottom: 2rem;
+    color: #EEBC72;
     font-family: var(--main-font);
     font-size: 4rem;
     text-align: center;
-    color: #EEBC72;
-    margin-bottom: 2rem;
 
     .t-c1 {
       color: #EE807D;
@@ -66,26 +65,26 @@ button {
 
 /* content */
 .content {
-  margin: 0 auto;
   width: 120rem;
   max-width: calc(100% - 6rem);
+  margin: 0 auto;
 }
 
 /* footer */
 .footer {
-  margin-top: 10rem;
   padding: 4rem;
+  margin-top: 10rem;
   background: #1E1E1E;
-  text-align: center;
   color: #fff;
   font-family: var(--main-font);
+  text-align: center;
 
   h2 {
     font-size: 1.6rem;
 
     strong {
-      font-size: 2rem;
       font-family: var(--bold-font);
+      font-size: 2rem;
     }
   }
 
@@ -101,48 +100,47 @@ button {
         content: '';
         display: inline-block;
         width: 1px;
-        height: 8px;
-        background: rgba(255, 255, 255, 0.2);
+        height: 0.8rem;
         margin-right: 2rem;
+        background: rgba(255, 255, 255, 0.2);
       }
     }
   }
 }
 
-
 /* 컨트롤 */
 .control {
   display: flex;
   justify-content: space-between;
-  color: #fff;
   padding: 0.8em 0;
   margin-bottom: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.3), 0 -1px rgba(0, 0, 0, 0.3);
 
   a,
   button {
-    border: 0;
-    box-sizing: border-box;
     height: 3.2rem;
-    line-height: 3.2rem;
+    border: 0;
     border-radius: 0.4rem;
+    line-height: 3.2rem;
+    box-sizing: border-box;
   }
 
-  .back {
+  .button-back {
     display: block;
     height: 100%;
     padding-left: 3.2rem;
+    background: url(../img/back.svg) no-repeat 0 50% / 2.4rem 2.4rem;
     color: #fff;
     font-size: 1.6rem;
-    background: url(../img/back.svg) no-repeat 0 50% / 2.4rem 2.4rem;
   }
 
   .control-right {
     display: flex;
-    align-items: center;
     gap: 0.8rem;
+    align-items: center;
   }
 }
 
@@ -152,27 +150,26 @@ button {
   width: 12rem;
 
   .btn-select {
+    overflow: hidden;
+    position: relative;
     width: 100%;
+    padding: 0 2em 0 1em;
     border-radius: 0.3rem;
+    background: #111;
     color: #fff;
     text-align: left;
-    padding: 0 2em 0 1em;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
-    background: #111;
-    position: relative;
+    white-space: nowrap;
 
     &::after {
       content: '';
       display: block;
-      width: 2.4rem;
-      height: 2.4rem;
       position: absolute;
       top: 50%;
-      margin-top: -1.2rem;
       right: 0.8rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-top: -1.2rem;
       background: url(../img/down.svg) no-repeat 50% 50% / cover;
       transition: transform 0.3s;
     }
@@ -180,8 +177,6 @@ button {
     &.on::after {
       transform: rotate(-180deg);
     }
-
-
   }
 
   .btn-select:active+.list-member {
@@ -189,16 +184,16 @@ button {
   }
 
   .list-member {
+    display: none;
     position: absolute;
     top: 3.4rem;
     left: 0;
-    z-index: 1;
-    display: none;
     width: 100%;
     border-radius: 0.4rem;
     background: #1e1e1e;
     color: #fff;
-    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0.4rem 0.4rem 1.4rem rgba(0, 0, 0, 0.15);
+    z-index: 1;
 
     &.on {
       display: block;
@@ -209,37 +204,34 @@ button {
       padding: 0.5rem 0.8rem;
 
       button {
+        overflow: hidden;
         width: 100%;
         height: 100%;
-        text-align: left;
         border-radius: 0.8rem;
         background: transparent;
         color: #fff;
-        transition: background-color 0.3s;
-        overflow: hidden;
-        white-space: nowrap;
+        text-align: left;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        transition: background-color 0.3s;
 
         &:hover,
         &:focus {
           color: #4AA5F8;
         }
       }
-
     }
-
   }
 }
 
 /* button */
-[class^='button-'] {
-  background: #4AA5F8;
-  color: #fff;
+[class^='button-']:not(.button-back) {
   display: inline-flex;
+  align-items: center;
   padding: 0 1rem;
   border-radius: 0.4rem;
-  align-items: center;
-
+  background: #4AA5F8;
+  color: #fff;
 
   &.button-st1 {
     background: #004D94;
@@ -251,19 +243,25 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
+
+  @media(max-width:1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media(max-width:560px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .color-list {
   a {
     display: flex;
     flex-direction: column-reverse;
+    gap: 0.5em;
     padding: 1.2rem;
-    font-size: 1.6rem;
     border-radius: 1rem;
     background: #1E1E1E;
-
-
-    gap: 0.5em;
+    font-size: 1.6rem;
   }
 
   .color-title {
@@ -275,27 +273,27 @@ button {
     flex-direction: column;
 
     .script-txt {
-      color: #fff;
       padding: 2em 1em;
+      color: #fff;
     }
 
     div.script-txt {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 40rem;
       margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       p {
-        font-size: 2em;
         font-family: var(--main-font);
+        font-size: 2em;
       }
     }
 
     .palette {
       display: flex;
-      height: 4rem;
       align-items: stretch;
+      height: 4rem;
 
       li {
         width: 100%;
@@ -312,76 +310,31 @@ button {
       height: 12rem;
 
       button span {
-
-        transition: all 0.3s;
         opacity: 0;
-
+        transition: all 0.3s;
       }
 
       button:hover {
         span {
-          opacity: 1;
-          font-size: 1.8rem;
-          color: #fff;
           padding: 0.4rem 1rem;
-          background: rgba(0, 0, 0, 0.1);
           border: 1px solid rgba(255, 255, 255, 0.2);
           border-radius: 0.4rem;
+          background: rgba(0, 0, 0, 0.1);
+          color: #fff;
+          font-size: 1.8rem;
+          opacity: 1;
         }
       }
     }
   }
 }
 
-/* 임시 */
-.script-txt {
-  background: #1E1E1E;
+.cont-list,
+.cont-palette {
+  display: none;
 }
 
-.c1 {
-  color: #569CD6;
-
-  &.color-box {
-    background: #569CD6;
-  }
-}
-
-.c2 {
-  color: #9CDCFE;
-
-  &.color-box {
-    background: #9CDCFE;
-  }
-}
-
-.c3 {
-  color: #D4D4D4;
-
-  &.color-box {
-    background: #D4D4D4;
-  }
-}
-
-.c4 {
-  color: #DCDCAA;
-
-  &.color-box {
-    background: #DCDCAA;
-  }
-}
-
-.c5 {
-  color: #DA70D6;
-
-  &.color-box {
-    background: #DA70D6;
-  }
-}
-
-.c6 {
-  color: #CE9178;
-
-  &.color-box {
-    background: #CE9178;
-  }
+.cont-list.active,
+.cont-palette.active {
+  display: block;
 }
