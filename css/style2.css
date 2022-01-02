@@ -104,6 +104,16 @@ button {
   background: rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 640px) {
+  .footer ul {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .footer ul li:not(:first-child)::before {
+    display: none;
+  }
+}
+
 /* 컨트롤 */
 .control {
   display: flex;
@@ -134,10 +144,49 @@ button {
   font-size: 1.6rem;
 }
 
+@media (max-width: 640px) {
+  .control .button-back span {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
 .control .control-right {
   display: flex;
   gap: 0.8rem;
   align-items: center;
+}
+
+@media (max-width: 640px) {
+  .control .control-right > p span {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+  }
+}
+
+@media (max-width: 500px) {
+  .control .control-right > p {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+  }
 }
 
 /* 셀렉트 */
@@ -222,7 +271,9 @@ button {
 /* button */
 [class^='button-']:not(.button-back) {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
+  min-height: 3.2rem;
   padding: 0 1rem;
   border-radius: 0.4rem;
   background: #4AA5F8;
@@ -246,7 +297,7 @@ button {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .color-cont {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -272,15 +323,25 @@ button {
 }
 
 .color-list .wrap .script-txt {
-  padding: 2em 1em;
+  position: relative;
+  height: 0;
+  padding-top: calc(0.4 * 100%);
   color: #fff;
 }
 
+.color-list .wrap .script-txt .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14.5em;
+}
+
+.color-list .wrap .script-txt .inner span {
+  display: inline-block;
+}
+
 .color-list .wrap div.script-txt {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40rem;
   margin-bottom: 1rem;
 }
 
@@ -289,32 +350,56 @@ button {
   font-size: 2em;
 }
 
+@media (max-width: 1024px) {
+  .color-list .wrap div.script-txt p {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .color-list .wrap div.script-txt p {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 640px) {
+  .color-list .wrap div.script-txt p {
+    font-size: 1em;
+  }
+}
+
 .color-list .wrap .palette {
+  position: relative;
+  height: 0;
+  padding-top: calc(100% * 0.15);
+}
+
+.color-list .wrap .palette .inner {
   display: flex;
   align-items: stretch;
-  height: 4rem;
-}
-
-.color-list .wrap .palette li {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
-.color-list .wrap .palette .color-box {
+.color-list .wrap .palette .inner li {
   width: 100%;
   height: 100%;
 }
 
-.color-list .wrap ul.palette {
-  height: 12rem;
+.color-list .wrap .palette .inner .color-box {
+  width: 100%;
+  height: 100%;
 }
 
-.color-list .wrap ul.palette button span {
+.color-list .wrap .palette .inner button span {
   opacity: 0;
   transition: all 0.3s;
 }
 
-.color-list .wrap ul.palette button:hover span {
+.color-list .wrap .palette .inner button:hover span {
   padding: 0.4rem 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.4rem;
@@ -324,12 +409,26 @@ button {
   opacity: 1;
 }
 
-.cont-list,
-.cont-palette {
-  display: none;
+.alert-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  max-width: calc(100% - 10rem);
+  padding: 4rem;
+  border-radius: 0.8rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0.4rem 0.4rem 1.4rem rgba(0, 0, 0, 0.15);
 }
 
-.cont-list.active,
-.cont-palette.active {
-  display: block;
+.alert-modal p {
+  font-size: 2rem;
+}
+
+.alert-modal button {
+  width: 12rem;
+  margin-top: 1rem;
 }

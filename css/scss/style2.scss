@@ -10,7 +10,7 @@ button {
 }
 
 //접근성을 고려한 화면 감춤
-.a11y-hidden {
+@mixin a11y {
   overflow: hidden;
   position: absolute;
   width: 1px;
@@ -19,6 +19,11 @@ button {
   margin: -1px;
   border: 0;
   clip: rect(0, 0, 0, 0);
+
+}
+
+.a11y-hidden {
+  @include a11y;
 }
 
 /* Layout */
@@ -105,6 +110,15 @@ button {
         background: rgba(255, 255, 255, 0.2);
       }
     }
+
+    @media(max-width:640px) {
+      flex-direction: column;
+      gap: 0.4rem;
+
+      li:not(:first-child)::before {
+        display: none;
+      }
+    }
   }
 }
 
@@ -135,12 +149,30 @@ button {
     background: url(../img/back.svg) no-repeat 0 50% / 2.4rem 2.4rem;
     color: #fff;
     font-size: 1.6rem;
+
+    @media(max-width:640px) {
+      span {
+        @include a11y;
+      }
+    }
   }
 
   .control-right {
     display: flex;
     gap: 0.8rem;
     align-items: center;
+
+    &>p {
+      span {
+        @media(max-width:640px) {
+          @include a11y;
+        }
+      }
+
+      @media(max-width:500px) {
+        @include a11y;
+      }
+    }
   }
 }
 
@@ -227,7 +259,9 @@ button {
 /* button */
 [class^='button-']:not(.button-back) {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
+  min-height: 3.2rem;
   padding: 0 1rem;
   border-radius: 0.4rem;
   background: #4AA5F8;
@@ -248,7 +282,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media(max-width:560px) {
+  @media(max-width:640px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -273,68 +307,115 @@ button {
     flex-direction: column;
 
     .script-txt {
-      padding: 2em 1em;
+      position: relative;
+      height: 0;
+      padding-top: calc(0.4 * 100%);
       color: #fff;
+
+      .inner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 14.5em;
+
+        span {
+          display: inline-block;
+        }
+      }
+
     }
 
     div.script-txt {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 40rem;
       margin-bottom: 1rem;
+
 
       p {
         font-family: var(--main-font);
         font-size: 2em;
+
+
+        @media(max-width:1024px) {
+          font-size: 1.6em;
+        }
+
+        @media(max-width:768px) {
+          font-size: 1.2em;
+        }
+
+        @media(max-width:640px) {
+          font-size: 1em;
+
+        }
       }
     }
 
     .palette {
-      display: flex;
-      align-items: stretch;
-      height: 4rem;
+      position: relative;
+      height: 0;
+      padding-top: calc(100% * 0.15);
 
-      li {
+      .inner {
+        display: flex;
+        align-items: stretch;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-      }
 
-      .color-box {
-        width: 100%;
-        height: 100%;
-      }
-    }
+        li {
+          width: 100%;
+          height: 100%;
+        }
 
-    ul.palette {
-      height: 12rem;
+        .color-box {
+          width: 100%;
+          height: 100%;
+        }
 
-      button span {
-        opacity: 0;
-        transition: all 0.3s;
-      }
+        button span {
+          opacity: 0;
+          transition: all 0.3s;
+        }
 
-      button:hover {
-        span {
-          padding: 0.4rem 1rem;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 0.4rem;
-          background: rgba(0, 0, 0, 0.1);
-          color: #fff;
-          font-size: 1.8rem;
-          opacity: 1;
+        button:hover {
+          span {
+            padding: 0.4rem 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.4rem;
+            background: rgba(0, 0, 0, 0.1);
+            color: #fff;
+            font-size: 1.8rem;
+            opacity: 1;
+          }
         }
       }
     }
   }
 }
 
-.cont-list,
-.cont-palette {
-  display: none;
-}
+//copied 모달창
+.alert-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  max-width: calc(100% - 10rem);
+  padding: 4rem;
+  border-radius: 0.8rem;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0.4rem 0.4rem 1.4rem rgba(0, 0, 0, 0.15);
 
-.cont-list.active,
-.cont-palette.active {
-  display: block;
+  p {
+    font-size: 2rem;
+  }
+
+  button {
+    width: 12rem;
+    margin-top: 1rem;
+  }
 }
