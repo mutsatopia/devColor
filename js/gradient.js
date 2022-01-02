@@ -31,26 +31,35 @@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 추가 과업(12/30일 기준) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 // --------협의 및 도움 필요---------
-// 0-0. Git push & pull
-// 0-1. 뒤로가기, control 어떻게 할 것인가?
-// 0-2. 미니컬러 제거 건의
-// --------협의 및 도움 필요---------
-// 1. 코드 복사 + 모달창
-// 2. Copy format 변경시 코드 복사 format 변경
+// 0. 뒤로가기, control 어떻게 할 것인가?
+// --------자체 해결 과제---------
+// 1. 컨벤션 정리
+// 2. 코드 정리
 
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 추가 과업(12/30일 기준) @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 연결 작업 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
+const colorName = location.href.split("?")[1]; // color[1~n];
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 2번 기능 시작 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 const controlBtn = document.querySelector('.control-btn');
 const controlBtnUl = document.querySelector('.control-ul');
+let formatSetting = "";
 
 const openList = () => {
   controlBtn.classList.toggle('on');
 };
 
 controlBtn.addEventListener('click', openList);
+
+controlBtnUl.addEventListener('click', () => {
+  if(event.target.nodeName === "LI"){
+    formatSetting = event.target.innerHTML;
+    controlBtn.classList.toggle('on');
+    controlBtn.innerHTML = event.target.innerHTML;
+  }
+});
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 2번 기능 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
@@ -74,16 +83,16 @@ const gradientBg = document.querySelector('.gradient');
 
 
 // 초기 값 세팅
-let ColorQueue = ['#569CD6','#9CDCFE'];
+let ColorQueue = [palette[colorName][`c1`].hex,palette[colorName][`c2`].hex];
 let CheckQueue = ['color-box-1','color-box-2'];
 colorBox1.style.backgroundImage = 'url(../img/checked.png)';
 colorBox2.style.backgroundImage = 'url(../img/checked.png)';
-colorBox1.style.backgroundColor = '#569CD6';
-colorBox2.style.backgroundColor = '#9CDCFE';
-colorBox3.style.backgroundColor = '#D4D4D4';
-colorBox4.style.backgroundColor = '#DCDCAA';
-colorBox5.style.backgroundColor = '#DA70D6';
-colorBox6.style.backgroundColor = '#CE9178';
+colorBox1.style.backgroundColor = palette[colorName][`c1`].hex;
+colorBox2.style.backgroundColor = palette[colorName][`c2`].hex;
+colorBox3.style.backgroundColor = palette[colorName][`c3`].hex;
+colorBox4.style.backgroundColor = palette[colorName][`c4`].hex;
+colorBox5.style.backgroundColor = palette[colorName][`c5`].hex;
+colorBox6.style.backgroundColor = palette[colorName][`c6`].hex;
 
 
 // 체크 이미지 엘리먼트
@@ -161,7 +170,7 @@ colorArray.addEventListener('click', (event) => {
   if(event.target.nodeName === 'BUTTON'){
     let selectedBox = event.target.classList.value;
     for(let i=0; i<6; i++){
-      let selectedColor = palette[`color1`][`c${i+1}`].hex;
+      let selectedColor = palette[colorName][`c${i+1}`].hex;
       if(selectedBox === `color-box-${i+1}`){
         if(CheckQueue.length === 0){
           addCheckImg(event.target, selectedBox, selectedColor);
@@ -205,12 +214,14 @@ const rangeBar = document.querySelector('.range-bar');
 const degValue = document.getElementById("value1");
 
 let deg = 90;
+let flag = false;
 
 const changeValue = function(deg){
   degValue.innerHTML = `${deg}deg`;
 }
 
 rangeBar.addEventListener("input",() => {
+  flag = false;
   deg = rangeBar.value;
   changeValue(deg);
   deg = parseInt(deg, 10);
@@ -236,16 +247,18 @@ const changeRadial = (element) => {
   element.style.background = `radial-gradient(${ColorQueue[0]}, ${ColorQueue[1]})`;
 }
 
-let flag = false;
 radialBtn.addEventListener("click", () => {
   if(!flag){
     radialBtn.style.backgroundColor = 'chartreuse';
     changeRadial(gradientBg);
     flag = true;
+    rangeBar.setAttribute('disabled',flag);
+    
   } else {
     radialBtn.style.backgroundColor = 'rgba(255,255,255,0.3)';
     updateGradientBg(gradientBg, deg);
     flag = false;
+    rangeBar.disabled = flag;
   }
 });
 
@@ -326,7 +339,7 @@ const updateRandom = () => {
 randomBtn.addEventListener('click', () => {
   randomColor = ['empty','empty']
   while(randomColor[1] === 'empty'){
-    let color = palette[`color1`][`c${parseInt((Math.random() * 6) + 1,10)}`].rgb;
+    let color = palette[colorName][`c${parseInt((Math.random() * 6) + 1,10)}`].rgb;
     if(randomColor[0] !== color){
       if(randomColor[0] === 'empty'){
         randomColor[0] = color;
@@ -355,10 +368,66 @@ randomBtn.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 7번 기능 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 8번 기능 시작 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+const copyBtn = document.querySelector('.gradient-copy');
+const rgbColor = new Array(...ColorQueue);
+const rgbaColor = new Array(...ColorQueue);
+
+const getFormatColor = () => {
+  if(formatSetting === 'HEX'){
+    if(flag){
+      return `radial-gradient(${ColorQueue[0]}, ${ColorQueue[1]})`;
+    } else {
+      return `linear-gradient(${deg}deg, ${ColorQueue[0]} 0%, ${ColorQueue[1]} 100%)`;
+    }
+  } else if(formatSetting === 'RGB'){
+    for(let i=0; i<2; i++){
+      for(let j=0; j<6; j++){
+        if(ColorQueue[i] === palette[colorName][`c${j+1}`].hex){
+          rgbColor[i] = palette[colorName][`c${j+1}`].rgb;
+        }
+      }
+    }
+    if(flag){
+      return `radial-gradient(${rgbColor[0]}, ${rgbColor[1]})`;
+    } else {
+      return `linear-gradient(${deg}deg, ${rgbColor[0]} 0%, ${rgbColor[1]} 100%)`;
+    }
+  } else {
+    for(let i=0; i<2; i++){
+      for(let j=0; j<6; j++){
+        if(ColorQueue[i] === palette[colorName][`c${j+1}`].hex){
+          rgbaColor[i] = palette[colorName][`c${j+1}`].rgba;
+        }
+      }
+    }
+    if(flag){
+      return `radial-gradient(${rgbaColor[0]}, ${rgbaColor[1]})`;
+    } else {
+      return `linear-gradient(${deg}deg, ${rgbaColor[0]} 0%, ${rgbaColor[1]} 100%)`;
+    }
+  }
+}
+
+const gradientCopy = () => {
+  const copiedAlert = document.querySelector('.copied');
+  let copiedColor = '';
+
+  console.log(controlBtn.innerHTML);
+
+  copiedColor = getFormatColor();
+  
+  navigator.clipboard.writeText(copiedColor);
+  
+  copiedAlert.classList.toggle('on');
+  setTimeout(() => {
+    copiedAlert.classList.toggle('on');
+  },800);
+}
+
+copyBtn.addEventListener('click', gradientCopy);
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 8번 기능 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
