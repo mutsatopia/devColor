@@ -14,70 +14,75 @@ body {
     color: #fff;
 }
 
+html {
+    font-size: 10px;
+}
+
 .container {
-    width: 1440px;
+    width: 120rem;
+    max-width: calc(100% - 6rem);
     margin: 0 auto;
 }
 
 main {    
     background-color: #333333;
-    padding-bottom: 132px;
+    padding-bottom: 13rem;
 }
 
 main .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.8em 0;
+    margin-bottom: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(104, 65, 65, 0.1);
+    box-shadow: inset 0 -1px rgb(0 0 0 / 30%), 0 -1px rgb(0 0 0 / 30%);
 }
 
 .main-header__back a {
-    font-size: 18px;
+    font-size: 1.6rem;
     position: relative;
-    padding-left: 36.75px;
+    padding-left: 3.6rem;
 }
 
 .main-header__back a::before {
     content: '';
     background-image: url(../img/arrow.png);
-    width: 17.5px;
-    height: 13.5px;
+    width: 1.7rem;
+    height: 1.3rem;
     position: absolute;
-    left: 3.25px;
-    top: 5.25px;
+    left: -0.1rem;
+    top: 0.3rem;
 }
 
-.main-header .control {
+.main-header .control-box {
     display: flex;
-    justify-content: space-between;
+    gap: 0.8rem;
     align-items: center;
     position: relative;
 }
 
-.control .control-info {
-    margin-right: 22px;
-}
-
-.control .control-btn {
-    width: 160px;
-    height: 44px;
-    border-radius: 4px;
+.control-box .control-btn {
+    width: 12rem;
+    line-height: 3.2rem;
+    border-radius: 0.4rem;
     background-color: #000;
     color: inherit;
-    font-size: 20px; 
-    font-weight: bold;
-    padding: 0 116px 0 14px;
+    padding: 0 11rem 0 1.4rem;
     font-family: inherit;
     position: relative;
 }
 
-.control .control-btn::after {
+.control-box .control-btn::after {
     content: '';
     background-image: url(../img/angle_down.png);
     position: absolute;
     right: 14.25px;
-    width: 11.5px;
-    height: 6.5px;
-    top: 19.25px;
+    width: 1.1rem;
+    height: 0.6rem;
+    top: 13.25px;
+    transition: transform 0.3s;
 }
 
 .control-btn.on::after {
@@ -88,46 +93,34 @@ main .main-header {
   display: block;
 }
 
-.control .control-ul {
+.control-box .control-ul {
     display: none;
     position: absolute;
-    left: 126px;
-    font-size: 20px;
-    width: 160px;
-    bottom: -74px;
-    background-color: black;
-    padding: 14px;
-    border-radius: 4px;
+    left: 115px;
+    width: 12rem;
+    bottom: -123px;
+    background-color: #1e1e1e;
+    padding: 1.4rem;
+    border-radius: 0.4rem;
     z-index: 1;
+    box-shadow: 0.4rem 0.4rem 1.4rem rgb(0 0 0 / 15%);
+    line-height: 3rem;
+    cursor: pointer;
 }
 
-.control .control-mode {
-    width: 160px;
-    height: 44px;
-    border-radius: 4px;
-    background-color: #004D94;
+.control-box .control-mode {
+    min-height: 3.2rem;
+    line-height: 3.2rem;
+    padding: 0 1rem;
+    border-radius: 0.4rem;
+    background-color: #4AA5F8;
     color: #fff;
-    font-size: 20px; 
-    font-weight: bold;
     text-align: center;
-    line-height: 44px;
-    margin-left: 17px;
-    position: relative;
-}
-
-.control .control-mode::before {
-    content: '';
-    width: 1px;
-    height: 20px;
-    background-color: #C4C4C4;
-    position: absolute;
-    left: -8px;
-    top: 12px;
 }
 
 main .gradient {
-    margin: 28px 0 40px 0;
-    height: 600px;
+    margin-bottom: 1rem;
+    padding-top: calc(0.4 * 100%);
     background: linear-gradient(90deg, #569CD6 0%, #9CDCFE 100%);
     position: relative;
 }
@@ -139,36 +132,12 @@ main .gradient {
     display: flex;
 }
 
-.gradient-control .first-mini-color,
-.gradient-control .second-mini-color {
-    width: 64px;
-    height: 44px;
-    border-radius: 4px;
-    border: none;
-    padding: 8px;
-    background-color: #fff;
-}
-
-.gradient-control input[type="color" i]::-webkit-color-swatch-wrapper {
-    align-items: center;
-}
-
-.gradient-control input[type="color" i]::-webkit-color-swatch {
-    width: 44px;
-    height: 28px;
-    border: none;
-}
-
-.gradient-control .second-mini-color {
-    margin: 0 13px 0 4px;
-}
-
 .gradient-control .gradient-rotate {
-    width: 44px;
-    height: 44px;
-    border-radius: 4px 0 0 4px;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 0.4rem 0 0 0.4rem;
     position: relative;
-    border: 7px solid white;
+    border: 0.7rem solid white;
     background: linear-gradient(90deg, #569CD6 0%, #9CDCFE 100%);
     box-sizing: border-box;
 }
@@ -177,28 +146,24 @@ main .gradient {
     position: absolute;
     top: 68px;
     left: -71px;
-    width: 170px;
+    width: 17rem;
     display: none;
 }
 
 .range-control input {
-    width: 90px;
+    width: 9rem;
 }
 
 .range-control label {
-  vertical-align: 3px;
-}
-
-.range-control label .value{
-
+  vertical-align: 0.3rem;
 }
 
 .gradient-rotate .range-bg {
     background-color: #fff;
     opacity: .3;
-    width: 178px;
-    height: 44px;
-    border-radius: 4px;
+    width: 17rem;
+    height: 4.4rem;
+    border-radius: 0.4rem;
     position: absolute;
     top: 56px;
     left: -74px;
@@ -215,7 +180,7 @@ main .gradient {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 10px 16px 10px;
+    border-width: 0 1rem 1.6rem 1rem;
     border-color: transparent transparent #fff transparent;
     position: absolute;
     top: -11px;
@@ -227,9 +192,9 @@ main .gradient {
 }
 
 .gradient-control .gradient-spread {
-    width: 44px;
-    height: 44px;
-    border-radius: 0 4px 4px 0;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 0 0.4rem 0.4rem 0;
     background-color: rgba(255,255,255,0.3);
     position: relative;
 }
@@ -238,17 +203,17 @@ main .gradient {
     content: '';
     position: absolute;
     background-image: url(../img/radial.png);
-    width: 28px;
-    height: 28px;
+    width: 2.8rem;
+    height: 2.8rem;
     top: 8px;
     left: 8px;
 }
 
 .gradient-control .gradient-random {
-    width: 44px;
-    height: 44px;
-    border-radius: 4px;
-    margin: 0 8px;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 0.4rem;
+    margin: 0 0.8rem;
     background-image: url(../img/random.png);
     background-size: 18px 19px;
     background-position: center;
@@ -256,9 +221,9 @@ main .gradient {
 }
 
 .gradient-control .gradient-copy {
-    width: 72px;
-    height: 44px;
-    border-radius: 4px;
+    width: 7rem;
+    height: 4.4rem;
+    border-radius: 0.4rem;
     background-image: url(../img/all_copy.png);
     background-size: 32px 18px;
     background-position: center;
@@ -266,7 +231,7 @@ main .gradient {
 }
 
 main .color-array {
-    height: 200px;
+    height: 18rem;
     display: flex;
 }
 
@@ -300,3 +265,26 @@ main .color-array {
     background-color: #CE9178;
 }
 
+.copied {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333333;
+    width: 400px;
+    height: 200px;
+    line-height: 200px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: none;
+}
+
+.copied p {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+}
+
+.copied.on {
+    display: block;
+}

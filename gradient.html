@@ -27,15 +27,16 @@
         <!-- 스크린 리더용 헤딩 태그-->
         <h2 class="sr_only">gradient</h2>
         <div class="main-header__back">
-          <a href="#none">BACK</a>
+          <a href="#none">back</a>
         </div>
         <!-- 컨트롤 박스 -->
-        <div class="control">
+        <div class="control-box">
           <p class="control-info">Copy Format :</p>
           <!-- JS로 클래스 토글로 컨트롤-->
           <button type="button" class="control-btn">HEX</button>
           <ul class="control-ul">
             <li>HEX</li>
+            <li>RGB</li>
             <li>RGBA</li>
           </ul>
           <a href="#none" class="control-mode">Palette Mode</a>
@@ -45,10 +46,6 @@
       <article class="gradient">
         <!-- 이 부분도 JS를 통해 한 번에 뿌리기 가능 (상의 필요) -->
         <div class="gradient-control">
-          <!-- 선택된 첫 번째 색상-->
-          <input type="color" value="#569CD6" class="first-mini-color"/>
-          <!-- 선택된 두 번째 색상-->
-          <input type="color" value="#9CDCFE" class="second-mini-color"/>
           <!-- 그라데이션 각도 조절-->
           <button class="gradient-rotate">
             <span class="range-bg"></span>
@@ -90,11 +87,14 @@
     <ul>
       <li>Kang Hyejin</li>
       <li>Kim Changhyeon</li>
-      <li>Lee Jia</li>
+      <li>Lee Jiah</li>
       <li>Hong Jeseop</li>
     </ul>
   </footer>
   <!-- //푸터 -->
+  <div class="copied">
+    <p>COPIED!</p>
+  </div>
 
   <script src="./js/color.js"></script>
   <script src="./js/gradient.js"></script>
