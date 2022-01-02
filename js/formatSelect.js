@@ -1,7 +1,10 @@
-function formatSelectEvent() {
-
+function formatSelect() {
   const selectBtn = document.querySelector('.btn-select'); //select
   const optionUl = document.querySelector('.list-member'); //ul
+
+  if (localStorage.getItem('colorFormat') !== null) {
+    selectBtn.textContent = localStorage.getItem('colorFormat');
+  }
 
   let devLang = ["HEX", "rgba", "rgb"];
   for (let i = 0; i < devLang.length; i++) {
@@ -24,6 +27,8 @@ function formatSelectEvent() {
   const handleClickOption = function (e) {
     if (e.target.tagName === 'BUTTON') {
       selectBtn.textContent = e.target.textContent;
+      //로컬스토리지 컬러 포맷 저장
+      localStorage.setItem('colorFormat', e.target.textContent);
       selectBtn.classList.remove('on');
       optionUl.classList.remove('on');
       window.setTimeout(function () {
@@ -72,4 +77,4 @@ function formatSelectEvent() {
 
 };
 
-formatSelectEvent();
+formatSelect();
