@@ -60,7 +60,7 @@ function palettePage() {
   //gradient Mode 버튼
   const modeGradient = document.querySelector('.mode-gradient');
   modeGradient.addEventListener("click", function () {
-    location.href = "gradient2.html?" + colorName;
+    location.href = "gradient.html?" + colorName;
   })
 }
 
