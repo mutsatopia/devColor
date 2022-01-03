@@ -57,8 +57,8 @@ const rgbaColor = new Array(...ColorQueue);
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 전역 변수 끝 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 초기 값 세팅 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 // 컬러 박스 별 색, 체크 이미지 초기화
-colorBox1.style.backgroundImage = 'url(../img/checked.png)';
-colorBox2.style.backgroundImage = 'url(../img/checked.png)';
+colorBox1.style.backgroundImage = 'url(./img/checked.png)';
+colorBox2.style.backgroundImage = 'url(./img/checked.png)';
 colorBox1.style.backgroundColor = palette[colorName][`c1`].hex;
 colorBox2.style.backgroundColor = palette[colorName][`c2`].hex;
 colorBox3.style.backgroundColor = palette[colorName][`c3`].hex;
@@ -87,7 +87,7 @@ controlBtnUl.addEventListener('click', () => {
 // @@@@@@@@@@ 최대 2개 선택가능한 그라디언트 컬러배합 기능
 // @@@@@ 아규먼트에 해당하는 박스 체크 이미지 추가
 const addCheckImg = (box, selectedBox, selectedColor) => {
-  box.style.backgroundImage = 'url(../img/checked.png)';
+  box.style.backgroundImage = 'url(./img/checked.png)';
   CheckQueue.push(selectedBox);
   ColorQueue.push(selectedColor);
 }
@@ -259,27 +259,27 @@ const reallowedCheck = (color, num) => {
   switch(color){
     case colorBox1.style.backgroundColor:
       CheckQueue[num] = colorBox1.classList.value;
-      colorBox1.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox1.style.backgroundImage = 'url(./img/checked.png)';
       break;
     case colorBox2.style.backgroundColor:
       CheckQueue[num] = colorBox2.classList.value;
-      colorBox2.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox2.style.backgroundImage = 'url(./img/checked.png)';
       break;
     case colorBox3.style.backgroundColor:
       CheckQueue[num] = colorBox3.classList.value;
-      colorBox3.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox3.style.backgroundImage = 'url(./img/checked.png)';
       break;
     case colorBox4.style.backgroundColor:
       CheckQueue[num] = colorBox4.classList.value;
-      colorBox4.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox4.style.backgroundImage = 'url(./img/checked.png)';
       break;
     case colorBox5.style.backgroundColor:
       CheckQueue[num] = colorBox5.classList.value;
-      colorBox5.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox5.style.backgroundImage = 'url(./img/checked.png)';
       break;
     case colorBox6.style.backgroundColor:
       CheckQueue[num] = colorBox6.classList.value;
-      colorBox6.style.backgroundImage = 'url(../img/checked.png)';
+      colorBox6.style.backgroundImage = 'url(./img/checked.png)';
       break;
   }
 }
