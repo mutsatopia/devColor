@@ -9,8 +9,15 @@ function app() {
       location.href = "./palette.html?" + colorName;
     };
   })
+  
+  //palette Mode 전환 버튼
+  const modePalette = document.querySelector('.control-mode');
+  modePalette.addEventListener("click", function () {
+    location.href = "palette.html?" + colorName;
+  })
 }
 app();
+
 
 
 // 공통함수
