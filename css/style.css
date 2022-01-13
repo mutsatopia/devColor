@@ -192,21 +192,12 @@ main .gradient {
 }
 
 .gradient-control .gradient-spread {
+  background: url(../img/linear.png) no-repeat center;
   width: 4.4rem;
   height: 4.4rem;
   border-radius: 0 0.4rem 0.4rem 0;
   background-color: rgba(255, 255, 255, 0.3);
   position: relative;
-}
-
-.gradient-control .gradient-spread::after {
-  content: "";
-  position: absolute;
-  background-image: url(../img/radial.png);
-  width: 2.8rem;
-  height: 2.8rem;
-  top: 8px;
-  left: 8px;
 }
 
 .gradient-control .gradient-random {

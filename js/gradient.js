@@ -207,12 +207,13 @@ const changeRadial = (element) => {
 // @@@@@ flag값을 통한 on/off/ 기능
 radialBtn.addEventListener("click", () => {
   if (!flag) {
-    radialBtn.style.backgroundColor = "chartreuse";
+    radialBtn.style.background = "url(../img/radial.png) no-repeat center";
+    radialBtn.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
     changeRadial(gradientBg);
     flag = true;
     rangeBar.setAttribute("disabled", flag);
   } else {
-    radialBtn.style.backgroundColor = "rgba(255,255,255,0.3)";
+    radialBtn.style.background = "url(../img/linear.png) no-repeat center";
     updateGradientBg(gradientBg, deg);
     flag = false;
     rangeBar.disabled = flag;
