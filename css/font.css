@@ -5,14 +5,14 @@
 /* 폰트 : Inconsolata */
 @font-face {
   font-family: Inconsolata;
-  src: local('Inconsolata'),
-    url('../font/Inconsolata-Regular.ttf') format('truetype');
+  src: local("Inconsolata"),
+    url("../font/Inconsolata-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Inconsolata-Bold';
-  src: local('Inconsolata'),
-    url('../font/Inconsolata-Bold.ttf') format('truetype');
+  font-family: "Inconsolata-Bold";
+  src: local("Inconsolata"),
+    url("../font/Inconsolata-Bold.ttf") format("truetype");
 }
 
 :root {

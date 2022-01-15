@@ -1,11 +1,11 @@
 function mainScript() {
-  const main = document.querySelector('.color-cont');
+  const main = document.querySelector(".color-cont");
   const frag = document.createDocumentFragment();
   const len = Object.keys(palette).length;
 
   for (let i = 0; i < len; i++) {
-    const list = document.createElement('li');
-    list.classList.add('color-list');
+    const list = document.createElement("li");
+    list.classList.add("color-list");
     let colorName = Object.keys(palette)[i];
     list.innerHTML = `
     <a href='#'>
@@ -30,24 +30,20 @@ function mainScript() {
         </span>
       </span>
     </a>
-  `
+  `;
     frag.appendChild(list);
   }
   main.appendChild(frag);
 
-
   // color이름 전달하기
-  const paletteList = document.querySelectorAll('.color-list a');
+  const paletteList = document.querySelectorAll(".color-list a");
   function changePage(e) {
-    const colorName = e.currentTarget.querySelector('.color-title').textContent;
+    const colorName = e.currentTarget.querySelector(".color-title").textContent;
     console.log(colorName);
     location.href = "./palette.html?" + colorName;
-  };
+  }
 
-
-  paletteList.forEach(ele =>
-    ele.addEventListener("click", changePage)
-  )
+  paletteList.forEach((ele) => ele.addEventListener("click", changePage));
 }
 
 mainScript();

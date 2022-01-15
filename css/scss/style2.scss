@@ -19,7 +19,6 @@ button {
   margin: -1px;
   border: 0;
   clip: rect(0, 0, 0, 0);
-
 }
 
 .a11y-hidden {
@@ -33,37 +32,37 @@ button {
 
   h1 {
     margin-bottom: 2rem;
-    color: #EEBC72;
+    color: #eebc72;
     font-family: var(--main-font);
     font-size: 4rem;
     text-align: center;
 
     .t-c1 {
-      color: #EE807D;
+      color: #ee807d;
     }
 
     .t-c2 {
-      color: #C0DB6C;
+      color: #c0db6c;
     }
 
     .t-c3 {
-      color: #9989F8;
+      color: #9989f8;
     }
 
     .t-c4 {
-      color: #4AA5F8;
+      color: #4aa5f8;
     }
 
     .t-c5 {
-      color: #EA3DEE;
+      color: #ea3dee;
     }
 
     .t-c6 {
-      color: #E39844;
+      color: #e39844;
     }
 
     .t-c6 {
-      color: #BFBFBF;
+      color: #bfbfbf;
     }
   }
 }
@@ -79,7 +78,7 @@ button {
 .footer {
   padding: 4rem;
   margin-top: 10rem;
-  background: #1E1E1E;
+  background: #1e1e1e;
   color: #fff;
   font-family: var(--main-font);
   text-align: center;
@@ -102,7 +101,7 @@ button {
 
     li:not(:first-child) {
       &::before {
-        content: '';
+        content: "";
         display: inline-block;
         width: 1px;
         height: 0.8rem;
@@ -111,7 +110,7 @@ button {
       }
     }
 
-    @media(max-width:640px) {
+    @media (max-width: 640px) {
       flex-direction: column;
       gap: 0.4rem;
 
@@ -150,7 +149,7 @@ button {
     color: #fff;
     font-size: 1.6rem;
 
-    @media(max-width:640px) {
+    @media (max-width: 640px) {
       span {
         @include a11y;
       }
@@ -162,14 +161,14 @@ button {
     gap: 0.8rem;
     align-items: center;
 
-    &>p {
+    & > p {
       span {
-        @media(max-width:640px) {
+        @media (max-width: 640px) {
           @include a11y;
         }
       }
 
-      @media(max-width:500px) {
+      @media (max-width: 500px) {
         @include a11y;
       }
     }
@@ -194,7 +193,7 @@ button {
     white-space: nowrap;
 
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       top: 50%;
@@ -211,7 +210,7 @@ button {
     }
   }
 
-  .btn-select:active+.list-member {
+  .btn-select:active + .list-member {
     display: block;
   }
 
@@ -249,7 +248,7 @@ button {
 
         &:hover,
         &:focus {
-          color: #4AA5F8;
+          color: #4aa5f8;
         }
       }
     }
@@ -257,18 +256,18 @@ button {
 }
 
 /* button */
-[class^='button-']:not(.button-back) {
+[class^="button-"]:not(.button-back) {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   min-height: 3.2rem;
   padding: 0 1rem;
   border-radius: 0.4rem;
-  background: #4AA5F8;
+  background: #4aa5f8;
   color: #fff;
 
   &.button-st1 {
-    background: #004D94;
+    background: #004d94;
   }
 }
 
@@ -278,11 +277,11 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
 
-  @media(max-width:1024px) {
+  @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media(max-width:640px) {
+  @media (max-width: 640px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -294,7 +293,7 @@ button {
     gap: 0.5em;
     padding: 1.2rem;
     border-radius: 1rem;
-    background: #1E1E1E;
+    background: #1e1e1e;
     font-size: 1.6rem;
   }
 
@@ -323,29 +322,25 @@ button {
           display: inline-block;
         }
       }
-
     }
 
     div.script-txt {
       margin-bottom: 1rem;
 
-
       p {
         font-family: var(--main-font);
         font-size: 2em;
 
-
-        @media(max-width:1024px) {
+        @media (max-width: 1024px) {
           font-size: 1.6em;
         }
 
-        @media(max-width:768px) {
+        @media (max-width: 768px) {
           font-size: 1.2em;
         }
 
-        @media(max-width:640px) {
+        @media (max-width: 640px) {
           font-size: 1em;
-
         }
       }
     }

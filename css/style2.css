@@ -27,38 +27,38 @@ button {
 
 .header h1 {
   margin-bottom: 2rem;
-  color: #EEBC72;
+  color: #eebc72;
   font-family: var(--main-font);
   font-size: 4rem;
   text-align: center;
 }
 
 .header h1 .t-c1 {
-  color: #EE807D;
+  color: #ee807d;
 }
 
 .header h1 .t-c2 {
-  color: #C0DB6C;
+  color: #c0db6c;
 }
 
 .header h1 .t-c3 {
-  color: #9989F8;
+  color: #9989f8;
 }
 
 .header h1 .t-c4 {
-  color: #4AA5F8;
+  color: #4aa5f8;
 }
 
 .header h1 .t-c5 {
-  color: #EA3DEE;
+  color: #ea3dee;
 }
 
 .header h1 .t-c6 {
-  color: #E39844;
+  color: #e39844;
 }
 
 .header h1 .t-c6 {
-  color: #BFBFBF;
+  color: #bfbfbf;
 }
 
 /* content */
@@ -72,7 +72,7 @@ button {
 .footer {
   padding: 4rem;
   margin-top: 10rem;
-  background: #1E1E1E;
+  background: #1e1e1e;
   color: #fff;
   font-family: var(--main-font);
   text-align: center;
@@ -96,7 +96,7 @@ button {
 }
 
 .footer ul li:not(:first-child)::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1px;
   height: 0.8rem;
@@ -209,7 +209,7 @@ button {
 }
 
 .cont-select .btn-select::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 50%;
@@ -217,7 +217,7 @@ button {
   width: 2.4rem;
   height: 2.4rem;
   margin-top: -1.2rem;
-  background: url(../img/down.svg) no-repeat 50% 50%/cover;
+  background: url(../img/down.svg) no-repeat 50% 50% / cover;
   transition: transform 0.3s;
 }
 
@@ -264,24 +264,25 @@ button {
   transition: background-color 0.3s;
 }
 
-.cont-select .list-member li button:hover, .cont-select .list-member li button:focus {
-  color: #4AA5F8;
+.cont-select .list-member li button:hover,
+.cont-select .list-member li button:focus {
+  color: #4aa5f8;
 }
 
 /* button */
-[class^='button-']:not(.button-back) {
+[class^="button-"]:not(.button-back) {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   min-height: 3.2rem;
   padding: 0 1rem;
   border-radius: 0.4rem;
-  background: #4AA5F8;
+  background: #4aa5f8;
   color: #fff;
 }
 
-[class^='button-']:not(.button-back).button-st1 {
-  background: #004D94;
+[class^="button-"]:not(.button-back).button-st1 {
+  background: #004d94;
 }
 
 /* color box */
@@ -309,7 +310,7 @@ button {
   gap: 0.5em;
   padding: 1.2rem;
   border-radius: 1rem;
-  background: #1E1E1E;
+  background: #1e1e1e;
   font-size: 1.6rem;
 }
 
