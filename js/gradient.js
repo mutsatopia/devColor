@@ -71,11 +71,15 @@ const openList = () => {
 
 controlBtn.addEventListener("click", openList);
 
+if (localStorage.getItem("colorFormat") !== null) {
+  controlBtn.textContent = localStorage.getItem("colorFormat");
+}
 controlBtnUl.addEventListener("click", () => {
   if (event.target.nodeName === "LI") {
     formatSetting = event.target.innerHTML;
     controlBtn.classList.toggle("on");
     controlBtn.innerHTML = event.target.innerHTML;
+    localStorage.setItem('colorFormat', event.target.innerHTML)
   }
 });
 
@@ -208,7 +212,7 @@ const changeRadial = (element) => {
 radialBtn.addEventListener("click", () => {
   if (!flag) {
     radialBtn.style.background = "url(../img/radial.png) no-repeat center";
-    radialBtn.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+    radialBtn.style.backgroundColor = "rgba(255, 255, 255, 1)";
     changeRadial(gradientBg);
     flag = true;
     rangeBar.setAttribute("disabled", flag);
@@ -350,8 +354,6 @@ const getFormatColor = () => {
 const gradientCopy = () => {
   const _copiedAlert = document.querySelector(".copied");
   let _copiedColor = "";
-
-  console.log(controlBtn.innerHTML);
 
   _copiedColor = getFormatColor();
 
