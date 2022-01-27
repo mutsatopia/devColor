@@ -6,7 +6,7 @@ function formatSelect() {
     selectBtn.textContent = localStorage.getItem("colorFormat");
   }
 
-  let devLang = ["HEX", "rgba", "rgb"];
+  let devLang = ["HEX", "RGB", "RGBA",];
   for (let i = 0; i < devLang.length; i++) {
     const li = document.createElement("li");
     const btn = document.createElement("button");
